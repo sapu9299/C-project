@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoAlbum", "PhotoAlbum\PhotoAlbum.csproj", "{7BF521EE-BF4E-4EE4-90E4-C8B4D96AC72F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "conditional_statmt", "conditional_statmt\conditional_statmt.csproj", "{A774F295-522C-4499-939D-F32EBDBD3954}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BF521EE-BF4E-4EE4-90E4-C8B4D96AC72F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BF521EE-BF4E-4EE4-90E4-C8B4D96AC72F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BF521EE-BF4E-4EE4-90E4-C8B4D96AC72F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BF521EE-BF4E-4EE4-90E4-C8B4D96AC72F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A774F295-522C-4499-939D-F32EBDBD3954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A774F295-522C-4499-939D-F32EBDBD3954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A774F295-522C-4499-939D-F32EBDBD3954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A774F295-522C-4499-939D-F32EBDBD3954}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1660FF1D-6F7C-4DE6-A32B-F4084DC4E152}
+	EndGlobalSection
+EndGlobal
