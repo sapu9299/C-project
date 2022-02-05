@@ -1,0 +1,35 @@
+﻿@model IEnumerable<OnlineShop.Entity.Models.Product>
+
+<div class="row">
+    <div class="col-12">
+        <h3>Movies</h3>
+        <hr />
+        <table class="table table-light table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+                    <th>Short Description</th>
+                    <th>Long Description</th>
+                    <th>Cost</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@product.ProductId</td>
+                        <td>@product.ProductName</td>
+                        <td>@product.ShortDescription</td>
+                        <td>@product.LongDescription</td>
+                        <td>@product.Cost</td>
+                        <td><a asp-controller="Products" asp-action="viewDetails" asp-route-ProductId="@product.ProductId">View Details</a></td>
+                        <td><a asp-controller="Products" asp-action="AddToCart" asp-route-ProductId="@product.ProductId">AddToCart</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
