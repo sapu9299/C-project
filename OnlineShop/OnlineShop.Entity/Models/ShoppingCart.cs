@@ -7,9 +7,11 @@ namespace OnlineShop.Entity.Models
 {
     public class ShoppingCart
     {
+
         [Key]
+        public int CardId { get; set; }
         public string ShoppingCartId { get; set; }
 
-        public List<ShoppingCartItem> ShoppingCartItems { get; set; }
+        public List<Order> order { get; set; }
     }
 }

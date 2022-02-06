@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="col-12">
-        <h3>Movies</h3>
+        <h3>Products</h3>
         <hr />
         <table class="table table-light table-bordered table-hover">
             <thead>
@@ -10,8 +10,11 @@
                     <th>Product Id</th>
                     <th>Product Name</th>
                     <th>Short Description</th>
-                    <th>Long Description</th>
+                    @*
+                    <th>Long Description</th>*@
                     <th>Cost</th>
+                    <th>InStock</th>
+                    <th>CategoryId</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -19,15 +22,17 @@
             <tbody>
                 @foreach (var product in Model)
                 {
-                    <tr>
-                        <td>@product.ProductId</td>
-                        <td>@product.ProductName</td>
-                        <td>@product.ShortDescription</td>
-                        <td>@product.LongDescription</td>
-                        <td>@product.Cost</td>
-                        <td><a asp-controller="Products" asp-action="viewDetails" asp-route-ProductId="@product.ProductId">View Details</a></td>
-                        <td><a asp-controller="Products" asp-action="AddToCart" asp-route-ProductId="@product.ProductId">AddToCart</a></td>
-                    </tr>
+                <tr>
+                    <td>@product.ProductId</td>
+                    <td>@product.ProductName</td>
+                    <td>@product.ShortDescription</td>
+                    @*<td>@product.LongDescription</td>*@
+                    <td>@product.Cost</td>
+                    <td>@product.InStock</td>
+                    <td>@product.CategoryId</td>
+                    <td><a asp-controller="Product" asp-action="Edit" asp-route-ProductId="@product.ProductId">Edit</a></td>
+                    <td><a asp-controller="Product" asp-action="Delete" asp-route-ProductId="@product.ProductId">Delete</a></td>
+                </tr>
                 }
             </tbody>
         </table>

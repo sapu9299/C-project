@@ -15,10 +15,11 @@ namespace OnlineShop.Entity.Models
         public string ShortDescription { get; set; }
         public string LongDescription { get; set; }
         public decimal Cost { get; set; }
-        //public bool InStock { get; set; }
+        public bool InStock { get; set; }
        
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
+        public byte[] ImgPoster { get; set; }
 
     }
 }

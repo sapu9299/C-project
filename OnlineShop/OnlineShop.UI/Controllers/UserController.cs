@@ -63,6 +63,7 @@ namespace OnlineShop.UI.Controllers
                 StringContent content = new StringContent(JsonConvert.SerializeObject(userInfo), Encoding.UTF8, "application/json");
                 string endPoint = _configuration["WebApiBaseUrl"] + "User/Login";
                 using (var response = await client.PostAsync(endPoint, content))
+
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                         return RedirectToAction("Index", "Product");

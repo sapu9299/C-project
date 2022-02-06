@@ -12,13 +12,12 @@ namespace OnlineShop.DAL.Repository
     {
         ProductDbContext _productDbContext;
         ShoppingCart _shoppingCart;
-       
-        public OrderRepository(ProductDbContext productDbContext, ShoppingCart shoppingCart)
+
+        public OrderRepository(ProductDbContext productDbContext)
         {
             _productDbContext = productDbContext;
-            _shoppingCart = shoppingCart;
-        }
 
+        }
 
         public void CreateOrder(Order order)
         {

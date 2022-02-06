@@ -2,9 +2,9 @@
 
 
 <form method="post">
-    <h2>Movie Entry</h2><hr />
+    <h2>Product Entry</h2><hr />
     <div class="form-group">
-        <label>Movie Name</label>
+        <label>Product Name</label>
         <input type="text" asp-for="ProductName" class="form-control" placeholder="enter product name" required />
     </div>
     <div class="form-group">
@@ -19,20 +19,28 @@
         <label>Cost</label>
         <input type="text" asp-for="Cost" class="form-control" placeholder="enter product Cost" required />
     </div>
-    
+    <div class="form-group">
+        <label>Stock Avalability</label>
+        <input type="text" asp-for="InStock" class="form-control" placeholder="enter availability" required />
+    </div>
+    <div class="form-group">
+        <label>Category</label>
+        <input type="text" asp-for="CategoryId" class="form-control" placeholder="enter CategoryId" required />
+    </div>
+
     <input type="submit" value="Save" class="btn btn-outline-success" />
     <input type="button" value="Reset" class="btn btn-outline-secondary" />
     <hr />
     @if (ViewBag.status == "Ok")
     {
-    <div class="alert alert-success">
-        @ViewBag.message
-    </div>
+        <div class="alert alert-success">
+            @ViewBag.message
+        </div>
     }
-    else if(ViewBag.status == "Error")
+    else if (ViewBag.status == "Error")
     {
-    <div class="alert alert-danger">
-        @ViewBag.message
-    </div>
+        <div class="alert alert-danger">
+            @ViewBag.message
+        </div>
     }
 </form>

@@ -23,7 +23,7 @@ namespace OnlineShop.UI.Controllers
             IEnumerable<Product> productresult = null;
             using (HttpClient client = new HttpClient())
             {
-                string endPoint = _configuration["WebApiBaseUrl"] + "Movies/GetMovies";
+                string endPoint = _configuration["WebApiBaseUrl"] + "Product/GetProducts";
                 using (var response = await client.GetAsync(endPoint))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -35,7 +35,8 @@ namespace OnlineShop.UI.Controllers
             }
             return View(productresult);
         }
-        public IActionResult MovieEntry()
+        public IActionResult ProductEntry()
+        
         {
             return View();
         }
@@ -46,7 +47,7 @@ namespace OnlineShop.UI.Controllers
             using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(product), Encoding.UTF8, "application/json");
-                string endPoint = _configuration["WebApiBaseUrl"] + "Products/AddProduct";
+                string endPoint = _configuration["WebApiBaseUrl"] + "Product/AddProduct";
                 using (var response = await client.PostAsync(endPoint, content))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
