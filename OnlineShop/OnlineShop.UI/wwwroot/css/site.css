@@ -23,9 +23,33 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
-.carousel-inner {
+/*.carousel-inner {*/
     /*autoplayspeed:1000;*/
-}
+/*}
+
+.card-body {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 200px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}*/
+
+
+
+/*.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}*/
+
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

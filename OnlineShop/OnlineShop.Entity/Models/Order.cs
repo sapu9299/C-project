@@ -10,10 +10,10 @@ namespace OnlineShop.Entity.Models
         [Key]
         public int OrderId { get; set; }
         
-       productId
-            userId
-            quantity
-            amount
+        public int ProductId { get; set; }
+       public int UserId { get; set; }
+        public int Quantity{get;set;}
+       public int amount { get; set; }
         public DateTime OrderPlaced { get; set; }
     }
 }

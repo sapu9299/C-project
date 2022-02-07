@@ -10,6 +10,7 @@ namespace OnlineShop.Entity.Models
         [Key]
         public int CatergoryId { get; set; }
         public string CategoryName { get; set; }
+
         
     }
 }

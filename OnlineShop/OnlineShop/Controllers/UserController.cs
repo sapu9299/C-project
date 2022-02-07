@@ -24,7 +24,7 @@ namespace OnlineShopAPI.Controllers
             _userInfoService.Register(userInfo);
             return Ok("Register successfully!!");
         }
-        [HttpDelete("Login")]
+        [HttpPost("Login")]
         public IActionResult Login([FromBody] UserInfo userInfo)
         {
             _userInfoService.Login(userInfo);

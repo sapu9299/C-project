@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using OnlineShop.Entity.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -44,6 +45,12 @@ namespace OnlineShop.UI.Controllers
         public async Task<IActionResult> ProductEntry(Product product)
         {
             ViewBag.status = "";
+            if (Request.Form.Files.Count > 0)
+            {
+                MemoryStream ms = new MemoryStream();
+                Request.Form.Files[0].CopyTo(ms);
+                product.ImgPoster = ms.ToArray();
+            }
             using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(product), Encoding.UTF8, "application/json");
@@ -63,6 +70,24 @@ namespace OnlineShop.UI.Controllers
                 }
             }
             return View();
+        }
+        public async Task<IActionResult> Details(int ProductId)
+        {
+            IEnumerable<Product> productresult = null;
+            using (HttpClient client = new HttpClient())
+            {
+                //StringContent content = new StringContent(JsonConvert.SerializeObject(ProductId), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "Product/Details";
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        productresult = JsonConvert.DeserializeObject<IEnumerable<Product>>(result);
+                    }
+                }
+            }
+            return View(productresult);
         }
 
     }

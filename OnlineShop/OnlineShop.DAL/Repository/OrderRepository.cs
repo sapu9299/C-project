@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace OnlineShop.DAL.Repository
 {
-   public class OrderRepository:IOrderRepository
+    public class OrderRepository : IOrderRepository
     {
         ProductDbContext _productDbContext;
-        ShoppingCart _shoppingCart;
+        //ShoppingCart _shoppingCart;
 
         public OrderRepository(ProductDbContext productDbContext)
         {
@@ -19,40 +19,41 @@ namespace OnlineShop.DAL.Repository
 
         }
 
-        public void CreateOrder(Order order)
-        {
-            order.OrderPlaced = DateTime.Now;
+        //    public void CreateOrder(Order order)
+        //    {
+        //        order.OrderPlaced = DateTime.Now;
 
-            _productDbContext.Orders.Add(order);
+        //        _productDbContext.Orders.Add(order);
 
-            var shoppingCartItems = _shoppingCart.ShoppingCartItems;
+        //        //var shoppingCartItems = _shoppingCart.ShoppingCartItems;
 
-            foreach (var shoppingCartItem in shoppingCartItems)
-            {
-                var orderDetail = new OrderDetail()
-                {
-                    Amount = shoppingCartItem.Amount,
-                    ProductId = shoppingCartItem.Product.ProductId,
-                    OrderId = order.OrderId,
-                    Price = shoppingCartItem.Product.Cost
-                };
+        //        foreach (var shoppingCartItem in shoppingCartItems)
+        //        {
+        //            var orderDetail = new OrderDetail()
+        //            {
+        //                Amount = shoppingCartItem.Amount,
+        //                ProductId = shoppingCartItem.Product.ProductId,
+        //                OrderId = order.OrderId,
+        //                Price = shoppingCartItem.Product.Cost
+        //            };
 
-                _productDbContext.OrderItems.Add(orderDetail);
-            }
+        //            _productDbContext.OrderItems.Add(orderDetail);
+        //        }
 
-            _productDbContext.SaveChanges();
-        }
+        //        _productDbContext.SaveChanges();
+        //    }
+        //}
+
+        //public void AddOrder(Order order)
+        //{
+        //    _productDbContext.Orders.Add(order);
+        //    _productDbContext.SaveChanges();
+        //}
+
+        //public Order GetOrderById(int OrderId)
+        //{
+        //    return _productDbContext.Orders.Find(OrderId);
+        //}
     }
-
-    //public void AddOrder(Order order)
-    //{
-    //    _productDbContext.Orders.Add(order);
-    //    _productDbContext.SaveChanges();
-    //}
-
-    //public Order GetOrderById(int OrderId)
-    //{
-    //    return _productDbContext.Orders.Find(OrderId);
-    //}
 }
 

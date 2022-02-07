@@ -1,7 +1,7 @@
 ﻿@model OnlineShop.Entity.Models.Product
 
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <h2>Product Entry</h2><hr />
     <div class="form-group">
         <label>Product Name</label>
@@ -23,9 +23,14 @@
         <label>Stock Avalability</label>
         <input type="text" asp-for="InStock" class="form-control" placeholder="enter availability" required />
     </div>
+
     <div class="form-group">
         <label>Category</label>
         <input type="text" asp-for="CategoryId" class="form-control" placeholder="enter CategoryId" required />
+    </div>
+    <div class="form-group">
+        <label>Product Poster</label>
+        <input type="file" id="poster" name="poster" class="form-control" required />
     </div>
 
     <input type="submit" value="Save" class="btn btn-outline-success" />

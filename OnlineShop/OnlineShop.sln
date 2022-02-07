@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.DAL", "OnlineSho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.Entity", "OnlineShop.Entity\OnlineShop.Entity.csproj", "{886EAC11-0366-4EBC-A7C9-389B737E457E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.UI", "OnlineShop.UI\OnlineShop.UI.csproj", "{27E3890F-51BA-458B-9361-A9BEF6ABBEFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.UI", "OnlineShop.UI\OnlineShop.UI.csproj", "{27E3890F-51BA-458B-9361-A9BEF6ABBEFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

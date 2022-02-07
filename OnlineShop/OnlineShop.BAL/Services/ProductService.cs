@@ -22,11 +22,12 @@ namespace OnlineShop.BAL.Services
         {
             _productRepository.UpdateProduct(product);
         }
-        
-        public void DeleteProduct(int productId)
+
+        public void Delete(int productId)
         {
-            _productRepository.DeleteProduct(productId);
+            _productRepository.Delete(productId);
         }
+
         public void GetProductById(int ProductId)
         {
             _productRepository.GetProductById(ProductId);
@@ -34,6 +35,10 @@ namespace OnlineShop.BAL.Services
         public IEnumerable<Product> GetProducts()
         {
             return _productRepository.GetProducts();
+        }
+        public void Details(int ProductId)
+        {
+            _productRepository.Details(ProductId);
         }
 
 

@@ -21,6 +21,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Product</a>
                         </li>
+                       
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">Login</a>
                         </li>
@@ -33,19 +34,7 @@
             </div>
         </nav>
     </header>
-    @*<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-timer="10000">
-                <img class="d-block w-100" src="~/img/slider1.jpg" alt="First slide" width="500" height="500">
-            </div>
-            <div class="carousel-item" data-timer="10000">
-                <img class="d-block w-100" src="~/img/slider2.jpg" alt="Second slide" width="500" height="500">
-            </div>
-            <div class="carousel-item" data-timer="10000">
-                <img class="d-block w-100" src="~/img/slider3.png" alt="Third slide" width="500" height="500">
-            </div>
-        </div>
-    </div>*@
+    
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

@@ -21,6 +21,7 @@ namespace OnlineShopAPI.Controllers
         [HttpGet("GetProducts")]
         public IEnumerable<Product> GetProducts()
         {
+           
             return _productService.GetProducts();
         }
         [HttpPost("AddProduct")]
@@ -29,12 +30,21 @@ namespace OnlineShopAPI.Controllers
             _productService.AddProduct(product);
             return Ok("Product created successfully!!");
         }
-        [HttpDelete("DeleteProduct")]
-        public IActionResult DeleteProduct(int ProductId)
+        [HttpPost("DeleteProduct")]
+        public IActionResult Delete(int ProductId)
         {
-            _productService.DeleteProduct(ProductId);
+            _productService.Delete(ProductId);
             return Ok("Product deleted successfully!!");
         }
+
+        public IActionResult Details(int ProductId)
+        {
+            _productService.Details(ProductId);
+            return Ok("");
+        }
+
+
+
         [HttpPut("UpdateProduct")]
         public IActionResult UpdateProduct([FromBody] Product product)
         {

@@ -27,26 +27,29 @@ namespace OnlineShop.DAL.Repository
             _productDbContext.Entry(product).State = EntityState.Modified;
             _productDbContext.SaveChanges();
         }
-
-        public void DeleteProduct(int ProductId)
-        {
-            var movie = _productDbContext.Products.Find(ProductId);
-            _productDbContext.Products.Remove(movie);
-            _productDbContext.SaveChanges();
-            
-        }
-
         public Product GetProductById(int ProductId)
         {
             return _productDbContext.Products.Find(ProductId);
         }
-        //public Product GetProductById(int ProductId) => _productDbContext.Products.FirstOrDefault(p => p.ProductId == ProductId);
+       
 
         public IEnumerable<Product> GetProducts()
         {
             return _productDbContext.Products.ToList();
         }
 
-       
+        public void Delete(int ProductId)
+        {
+            var movie = _productDbContext.Products.Find(ProductId);
+            _productDbContext.Products.Remove(movie);
+            _productDbContext.SaveChanges();
+        }
+
+        public void Details(int ProductId)
+        {
+            _productDbContext.Products.Find(ProductId);
+            _productDbContext.SaveChanges();
+
+        }
     }
 }

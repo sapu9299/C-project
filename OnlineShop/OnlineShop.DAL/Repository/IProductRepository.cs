@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace OnlineShop.DAL.Repository
 {
@@ -9,8 +10,10 @@ namespace OnlineShop.DAL.Repository
     {
         void AddProduct(Product product);
         void UpdateProduct(Product product);
-        void DeleteProduct(int ProductId);
+        void  Delete(int ProductId);
         Product GetProductById(int ProductId);
         IEnumerable<Product> GetProducts();
+        void  Details(int ProductId);
+
     }
 }

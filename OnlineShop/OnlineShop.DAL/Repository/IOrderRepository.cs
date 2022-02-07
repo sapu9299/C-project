@@ -8,7 +8,7 @@ namespace OnlineShop.DAL.Repository
 {
    public interface IOrderRepository
     {
-        void CreateOrder(Order order);
+        //void CreateOrder(Order order);
         //void AddOrder(Order order);
         //Order GetOrderById(int OrderId);
     }
