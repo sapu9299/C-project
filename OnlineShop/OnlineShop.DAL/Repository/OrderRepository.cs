@@ -19,6 +19,22 @@ namespace OnlineShop.DAL.Repository
 
         }
 
+        public void CreateOrder(Order order)
+        {
+            order.OrderPlaced = DateTime.Now;
+            _productDbContext.Orders.Add(order);
+
+            //var orderDetail = new OrderDetail()
+            //{
+            //    Amount = shoppingCartItem.Amount,
+            //    ProductId = shoppingCartItem.Product.ProductId,
+            //    OrderId = order.OrderId,
+            //    Price = shoppingCartItem.Product.Cost
+            //};
+
+
+        }
+
         //    public void CreateOrder(Order order)
         //    {
         //        order.OrderPlaced = DateTime.Now;

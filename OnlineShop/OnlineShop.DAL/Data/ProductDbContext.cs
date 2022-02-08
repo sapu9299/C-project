@@ -17,7 +17,7 @@ namespace OnlineShop.DAL.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderItems { get; set; }
-        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public DbSet<UserInfo> userInfo { get; set; }
     }
 }

@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<OnlineShop.Entity.Models.Product>
-@*@model OnlineShop.Entity.Models.Product*@
+
 
 <div class="row">
+    @if(Model!=null)
     @foreach (var item in Model)
     {
         string imageBase64Data = Convert.ToBase64String(item.ImgPoster);
@@ -37,16 +38,22 @@
                     <div class="col-md-12">
                         <div class="card-footer ">
                             <p class="card-text">
-                                <a class="btn btn-outline-primary float-right" asp-action="Details" asp-route-id="@item.ProductId">
+                                <a class="btn btn-outline-primary float-right" asp-action="Details" asp-route-ProductId="@item.ProductId">
                                     <i class="bi bi-eye-fill"></i> Show Details
                                 </a>
-                                <a class="btn btn-success text-white"> <i class="bi bi-cart-plus"></i> Add to Cart($X.XX)</a>
+                                <a class="btn btn-outline-primary float-right" asp-controller="Cart"asp-action="AddToCart" asp-route-ProductId="@item.ProductId">
+                                    <i class="bi bi-eye-fill"></i> AddToCart(@item.Cost)</a>
+                                    @*<a class="btn btn-success text-white"> <i class="bi bi-cart-plus">asp-action="Details"</i> Add to Cart(@item.Cost)</a>*@
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>}
+        </div>
+        }  
+    else { 
+        <div class="alert alert-info">No Data Avalaible</div>
+        }
 </div>
 
 @*@await Html.PartialAsync("_CreateItem", "Product")*@

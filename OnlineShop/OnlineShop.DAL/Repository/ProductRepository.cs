@@ -40,16 +40,36 @@ namespace OnlineShop.DAL.Repository
 
         public void Delete(int ProductId)
         {
-            var movie = _productDbContext.Products.Find(ProductId);
-            _productDbContext.Products.Remove(movie);
+            var product = _productDbContext.Products.Find(ProductId);
+            _productDbContext.Products.Remove(product);
             _productDbContext.SaveChanges();
         }
 
-        public void Details(int ProductId)
+        public Product Details(int ProductId)
         {
-            _productDbContext.Products.Find(ProductId);
-            _productDbContext.SaveChanges();
+          return _productDbContext.Products.Find(ProductId);
 
         }
+        public IEnumerable<Product> Data(int CategoryId)
+        {
+            return _productDbContext.Products.Where(p=>p.CategoryId==CategoryId).ToList();
+
+        }
+
+        public Product CreateOrder(int ProductId)
+        {
+            return _productDbContext.Products.Find(ProductId);
+
+        }
+
+        public Product Order(int ProductId)
+        {
+            throw new NotImplementedException();
+        }
+
+        //public Product Order(int ProductId)
+        //{
+
+        //}
     }
 }

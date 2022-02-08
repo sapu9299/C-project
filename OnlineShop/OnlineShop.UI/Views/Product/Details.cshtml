@@ -2,11 +2,12 @@
 @model OnlineShop.Entity.Models.Product
 @{
     ViewData["Title"] = "Product details";
+    string imageBase64Data = Convert.ToBase64String(Model.ImgPoster);
+    string imageDataURL = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
 }
 
 <div class="row">
-    @*string imageBase64Data = Convert.ToBase64String(item.ImgPoster);
-    string imageDataURL = string.Format("data:image/jpg;base64,{0}", imageBase64Data);*@
+    
     <div class="col-md-8 offset-2">
         <div class="card mb-12">
             <div class="row g-0">
@@ -21,23 +22,13 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    @*<img src="@imageDataURL" width="100%" height="200" alt="@Model.ProductName">*@
+                    
+                    <img src="@imageDataURL" width="100%" height="200" alt="@Model.ProductName">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
                         <p class="card-text">@Model.LongDescription</p>
-                        @*<p class="card-text">
-                            <b>Cinema: </b>
-                            <a asp-controller="Cinemas" asp-action="Details" asp-route-id="@Model.CinemaId">
-                                @Model.Cinema.Name
-                            </a>
-                        </p>
-                        <p class="card-text">
-                            <b>Producer: </b>
-                            <a asp-controller="Producers" asp-action="Details" asp-route-id="@Model.ProducerId">
-                                @Model.Producer.FullName
-                            </a>
-                        </p>*@
+                       
                         
                 <div class="col-md-12">
                     <div class="card-footer">

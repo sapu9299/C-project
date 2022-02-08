@@ -1,0 +1,39 @@
+﻿@*@model IEnumerable<OnlineShop.Entity.Models.Product>*@
+@model OnlineShop.Entity.Models.Product
+
+
+<div class="row">
+    <div class="col-12">
+        <h3>Products</h3>
+        <hr />
+        <table class="table table-light table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+
+                    <th>Cost</th>
+                    <th></th>
+
+
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>@Model.ProductId</td>
+                    <td>@Model.ProductName</td>
+                    <td>@Model.Cost</td>
+                    @*<td>@movie.MovieDescription</td>
+        <td>@movie.MovieType</td>
+        <td>@movie.MovieLanguage</td>
+        <td><img src="@imageDataURL" /></td>*@
+                    @*<td><a asp-controller="Movies" asp-action="EditMovie" asp-route-MovieId="@movie.MovieId">Edit</a></td>*@
+                    <td><a asp-controller="" asp-action="" asp-route-MovieId="@Model.ProductId">Delete</a></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

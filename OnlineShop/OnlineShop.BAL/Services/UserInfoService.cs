@@ -13,9 +13,9 @@ namespace OnlineShop.BAL.Services
         {
             _userInfoRepository = userInfoRepository;
         }
-        public void Login(UserInfo user)
+        public UserInfo Login(UserInfo user)
         {
-            _userInfoRepository.Login(user);
+            return _userInfoRepository.Login(user);
         }
 
         public void Register(UserInfo userInfo)

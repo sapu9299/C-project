@@ -14,6 +14,6 @@ namespace OnlineShop.Entity.Models
         public int Amount { get; set; }
         //public ShoppingCart shoppingcart { get; set; }
         //[ForeignKey("shoppingcart")]
-        public string ShoppingCartId { get; set; }
+        public int ShoppingCartId { get; set; }
     }
 }

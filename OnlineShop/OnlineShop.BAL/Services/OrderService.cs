@@ -11,13 +11,13 @@ namespace OnlineShop.BAL.Services
         IOrderRepository _orderRepository;
         public OrderService(IOrderRepository orderRepository)
         {
-            _orderRepository = orderRepository;
+            //_orderRepository = orderRepository;
         }
 
-        //public void CreateOrder(Order order)
-        //{
-        //    _orderRepository.CreateOrder(order);
-        //}
+        public void CreateOrder(Order order)
+        {
+            //_orderRepository.CreateOrder(order);
+        }
 
 
         //public void AddOrder(Order order)

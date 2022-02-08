@@ -9,9 +9,16 @@ namespace OnlineShop.Entity.Models
     {
 
         [Key]
-        public int CardId { get; set; }
-        public string ShoppingCartId { get; set; }
+       
+        public int ShoppingCartId { get; set; }
 
-        public List<Order> order { get; set; }
+        public int UserId { get; set; }
+        //public int ProductId { get; set; }
+
+        //public List<Product> products { get; set; }
+        public int Cost { get; set; }
+        //public virtual Product product { get; set; }
+
+        
     }
 }

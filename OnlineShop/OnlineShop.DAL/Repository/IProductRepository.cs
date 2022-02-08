@@ -13,7 +13,9 @@ namespace OnlineShop.DAL.Repository
         void  Delete(int ProductId);
         Product GetProductById(int ProductId);
         IEnumerable<Product> GetProducts();
-        void  Details(int ProductId);
+        Product  Details(int ProductId);
+        IEnumerable<Product> Data(int CategoryId);
+        Product Order(int ProductId);
 
     }
 }

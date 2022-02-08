@@ -73,22 +73,39 @@ namespace OnlineShop.UI.Controllers
         }
         public async Task<IActionResult> Details(int ProductId)
         {
-            IEnumerable<Product> productresult = null;
+            Product productresult = null;
             using (HttpClient client = new HttpClient())
-            {
-                //StringContent content = new StringContent(JsonConvert.SerializeObject(ProductId), Encoding.UTF8, "application/json");
-                string endPoint = _configuration["WebApiBaseUrl"] + "Product/Details";
+            {     
+                string endPoint = _configuration["WebApiBaseUrl"] + "Product/Details?ProductId="+ProductId;
                 using (var response = await client.GetAsync(endPoint))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         var result = await response.Content.ReadAsStringAsync();
-                        productresult = JsonConvert.DeserializeObject<IEnumerable<Product>>(result);
+                        productresult = JsonConvert.DeserializeObject<Product>(result);
                     }
                 }
             }
-            return View(productresult);
+        return View(productresult);
         }
+        
 
+        public async Task<IActionResult> Data(int CategoryId)
+        {
+             IEnumerable <Product> categoryresult = null;
+            using (HttpClient client = new HttpClient())
+            {
+                string endPoint = _configuration["WebApiBaseUrl"] + "Product/Data?CategoryId=" + CategoryId;
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        categoryresult = JsonConvert.DeserializeObject<IEnumerable<Product>>(result);
+                    }
+                }
+            }
+            return View(categoryresult);
+        }
     }
 }

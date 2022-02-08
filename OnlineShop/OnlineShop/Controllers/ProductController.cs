@@ -36,11 +36,10 @@ namespace OnlineShopAPI.Controllers
             _productService.Delete(ProductId);
             return Ok("Product deleted successfully!!");
         }
-
-        public IActionResult Details(int ProductId)
-        {
-            _productService.Details(ProductId);
-            return Ok("");
+        [HttpGet("Details")]
+        public Product Details(int ProductId)
+        {          
+            return _productService.Details(ProductId);
         }
 
 
@@ -50,6 +49,11 @@ namespace OnlineShopAPI.Controllers
         {
             _productService.UpdateProduct(product);
             return Ok("Product updated successfully!!");
+        }
+        [HttpGet("Data")]
+        public IEnumerable<Product> Data(int CategoryId)
+        {
+            return _productService.Data(CategoryId);
         }
     }
 }

@@ -27,8 +27,11 @@ namespace OnlineShopAPI.Controllers
         [HttpPost("Login")]
         public IActionResult Login([FromBody] UserInfo userInfo)
         {
-            _userInfoService.Login(userInfo);
-            return Ok("Login success!!");
+            var result= _userInfoService.Login(userInfo);
+            if (result != null)
+                return Ok(result);
+            else
+                return NotFound();
         }
         
     }

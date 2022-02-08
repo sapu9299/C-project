@@ -36,9 +36,13 @@ namespace OnlineShop.BAL.Services
         {
             return _productRepository.GetProducts();
         }
-        public void Details(int ProductId)
+        public Product Details(int ProductId)
         {
-            _productRepository.Details(ProductId);
+          return  _productRepository.Details(ProductId);
+        }
+        public IEnumerable<Product> Data(int CategoryId)
+        {
+            return _productRepository.Data(CategoryId);
         }
 
 
